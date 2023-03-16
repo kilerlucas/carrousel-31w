@@ -7,8 +7,8 @@
 */
 /*
 Plugin name: Carrousel
-Author: Lucas Kiler
-Plugin URI: https:github.com/kilerlucas/carrousel-31w
+Author: Eddy Martin
+Plugin URI: https:github.com/eddytuto/carrousel
 Description: Permet d'afficher dans une boîte modale les images d'une galerie avec un système de navigation
 */
 
