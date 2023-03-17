@@ -9,6 +9,9 @@ let elmGalerie = document.querySelector('.galerie')
 let elmGalerie__img = elmGalerie.querySelectorAll('img')
 let elmCarrousel__figure = document.querySelector('.carrousel__figure') // conteneur d'images
 let elmCarrousel__form = document.querySelector('.carrousel__form') // conteneur des radio bouton
+let elmCarrousel__arrows = document.querySelectorAll('.carrousel__arrow');
+let elmCarrousel__prev = elmCarrousel__arrows[0];
+let elmCarrousel__next = elmCarrousel__arrows[1];
 console.log(elmGalerie__img.length)
 
 
@@ -66,5 +69,22 @@ function activer__image(index)
     index__precedent= index;
 }
 
+elmCarrousel__prev.addEventListener('click', function(){
+    let index = index__precedent - 1;
+    if(index < 0){
+        index = elmGalerie__img.length - 1;
+    }
+    activer__image(index);
+});
 
-})()
+elmCarrousel__next.addEventListener('click', function(){
+    let index = index__precedent + 1;
+    if(index >= elmGalerie__img.length){
+        index = 0;
+    }
+    activer__image(index);
+});
+
+
+
+})();

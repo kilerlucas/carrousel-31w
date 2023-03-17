@@ -7,8 +7,8 @@
 */
 /*
 Plugin name: Carrousel
-Author: Eddy Martin
-Plugin URI: https:github.com/eddytuto/carrousel
+Author: Lucas Kiler
+Plugin URI: https:github.com/kilerlucas/carrousel-31w
 Description: Permet d'afficher dans une boîte modale les images d'une galerie avec un système de navigation
 */
 
@@ -36,6 +36,8 @@ function creation_carrousel()
 {
 return '<button class="bouton__ouvrir">Ouvrir</button>
     <div class="carrousel">
+    <div class="carrousel__arrow carrousel__arrow--prev"></div>
+    <div class="carrousel__arrow carrousel__arrow--next"></div>
     <button class="bouton__x">X</button>
     <figure class="carrousel__figure"></figure>
     <form class="carrousel__form"></form>
