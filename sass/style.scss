@@ -94,3 +94,25 @@
     justify-content: center;
     z-index : 12;
 }
+
+
+.bouton__x::before, .bouton__x::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background-color: #555;
+}
+
+.bouton__x::before {
+    transform: rotate(45deg);
+}
+
+.bouton__x::after {
+    transform: rotate(-45deg);
+}
+
+.bouton__x:hover {
+    cursor: pointer;
+    background-color: #bbb;
+}

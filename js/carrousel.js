@@ -8,6 +8,12 @@
     let elmCarrousel__arrows = document.querySelectorAll('.carrousel__arrow');
     let elmCarrousel__prev = elmCarrousel__arrows[0];
     let elmCarrousel__next = elmCarrousel__arrows[1];
+    let elmCarrousel__close = document.querySelector('.bouton__x');
+
+    elmCarrousel__close.addEventListener('click', function() {
+        elmCarrousel.classList.remove('carrousel--ouvrir');
+    });
+
     console.log(elmGalerie__img.length)
 
     function ajouter_carrousel(elmImgClicada)
