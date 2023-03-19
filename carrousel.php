@@ -12,7 +12,6 @@ Plugin URI: https:github.com/kilerlucas/carrousel-31w
 Description: Permet d'afficher dans une boîte modale les images d'une galerie avec un système de navigation
 */
 
-
 function carrousel_enqueue(){
 
 $version_css = filemtime(plugin_dir_path(__FILE__ ) . "style.css");
@@ -36,8 +35,8 @@ function creation_carrousel()
 {
 return '<button class="bouton__ouvrir">Ouvrir</button>
     <div class="carrousel">
-    <div class="carrousel__arrow carrousel__arrow--prev"></div>
-    <div class="carrousel__arrow carrousel__arrow--next"></div>
+    <div class="carrousel__arrow carrousel__arrow--prev"><img src="https://s2.svgbox.net/hero-outline.svg?ic=arrow-left&color=999" width="32" height="32"></div>
+    <div class="carrousel__arrow carrousel__arrow--next"><img src="https://s2.svgbox.net/hero-outline.svg?ic=arrow-right&color=999" width="32" height="32"></div>
     <button class="bouton__x">X</button>
     <figure class="carrousel__figure"></figure>
     <form class="carrousel__form"></form>
