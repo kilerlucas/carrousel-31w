@@ -33,8 +33,7 @@ add_action('wp_enqueue_scripts', 'carrousel_enqueue');
 
 function creation_carrousel()
 {
-return '<button class="bouton__ouvrir">Ouvrir</button>
-    <div class="carrousel">
+return '<div class="carrousel">
     <div class="carrousel__arrow carrousel__arrow--prev"><img src="https://s2.svgbox.net/hero-outline.svg?ic=arrow-left&color=999" width="32" height="32"></div>
     <div class="carrousel__arrow carrousel__arrow--next"><img src="https://s2.svgbox.net/hero-outline.svg?ic=arrow-right&color=999" width="32" height="32"></div>
     <button class="bouton__x">X</button>
