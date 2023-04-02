@@ -4,27 +4,51 @@
 
     // fonction IFEE
     console.log('début du carrousel')
-    let bouton__ouvrir = document.querySelector('.bouton__ouvrir')
+    // let bouton__ouvrir = document.querySelector('.bouton__ouvrir')
     let elmCarrousel = document.querySelector('.carrousel')
     let elmBouton__x = document.querySelector('.bouton__x')
     let elmGalerie = document.querySelector('.galerie')
     let elmGalerie__img = elmGalerie.querySelectorAll('img')
+    let elmBouttonPrev = document.querySelector('.bouton__prev')
+    let elmBouttonNext = document.querySelector('.bouton__next')
     let elmCarrousel__figure = document.querySelector('.carrousel__figure') // conteneur d'images
     let elmCarrousel__form = document.querySelector('.carrousel__form') // conteneur des radio bouton
     console.log(elmGalerie__img.length)
+    // console.log(bouton__ouvrir.tagName)
     
-    
-    
-    console.log(bouton__ouvrir.tagName)
-    
-    bouton__ouvrir.addEventListener('mousedown', function(){
-        console.log('boîte modale')
-        elmCarrousel.classList.add('carrousel--ouvrir')
-        ajouter_carrousel()
-    })
+    // bouton__ouvrir.addEventListener('mousedown', function(){
+    //     console.log('boîte modale')
+    //     elmCarrousel.classList.add('carrousel--ouvrir')
+    //     ajouter_carrousel()
+    // })
     elmBouton__x.addEventListener('mousedown', function(){
         console.log('boîte modale')
         elmCarrousel.classList.remove('carrousel--ouvrir')
+    })
+
+    elmBouttonPrev.addEventListener('mousedown', function(){
+        var newIndex = 0;
+        if(selectedImage === 0){
+            newIndex = elmGalerie__img.length - 1
+        } else {
+            newIndex = selectedImage - 1 
+        }
+        activer__image(newIndex)
+        selectedImage = newIndex
+        // console.log();
+
+    })
+
+    elmBouttonNext.addEventListener('mousedown', function(){
+        var newIndex = 0;
+        console.log("next")
+        if(selectedImage === elmGalerie__img.length - 1){
+            newIndex = 0;
+        } else {
+            newIndex = selectedImage + 1 
+        }
+        activer__image(newIndex)
+        selectedImage = newIndex
     })
 
     document.querySelectorAll('.galerie img').forEach(function(elmImg, index){
@@ -46,8 +70,9 @@
     {
         elmCarrousel__form.innerHTML = ''
         for (const elmImg of elmGalerie__img){
-            ajouter_img(elmImg) // ajoute l'image dans le carrousel
             ajouter_radio() // ajoute les radio bouton dans carrousel__form
+            ajouter_img(elmImg) // ajoute l'image dans le carrousel
+            
         }
         if (selectedImage !== 0) {
             index__precedent = selectedImage
@@ -71,7 +96,7 @@
       elmCarrousel__radio.setAttribute('name', 'radCarrousel')
 
       if(index === selectedImage) {
-        elmCarrousel__radio.setAttribute('checked', true)
+        elmCarrousel__radio.checked = true
       }
 
       elmCarrousel__radio.dataset.index = index
@@ -87,9 +112,14 @@
         if (index__precedent != -1)
         {
             elmCarrousel__figure.children[index__precedent].classList.remove('carrousel__img--activer')  
+            elmCarrousel__form.children[index__precedent].checked = false
         }
+
+        console.log(index)
+        elmCarrousel__form.children[index].checked = true
+
         elmCarrousel__figure.children[index].classList.add('carrousel__img--activer') 
-        index__precedent= index;
+        index__precedent = index;
     }
     
     
