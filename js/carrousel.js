@@ -26,6 +26,21 @@
         console.log('boîte modale')
         elmCarrousel.classList.remove('carrousel--ouvrir')
     })
+
+    document.querySelectorAll('.galerie img').forEach(function(elmImg, index){
+        elmImg.addEventListener('mousedown', function(){
+            selectedImage = index;
+            
+            if(index__precedent !== -1){
+                elmCarrousel__figure.children[index__precedent].classList.remove('carrousel__img--activer')
+            }
+
+            elmCarrousel.classList.add('carrousel--ouvrir')
+            console.log('boîte modale')
+            ajouter_carrousel()
+        })
+    });
+
     
     function ajouter_carrousel()
     {
@@ -34,7 +49,10 @@
             ajouter_img(elmImg) // ajoute l'image dans le carrousel
             ajouter_radio() // ajoute les radio bouton dans carrousel__form
         }
-        elmCarrousel__figure.children[0].classList.add('carrousel__img--activer')
+        if (selectedImage !== 0) {
+            index__precedent = selectedImage
+        }
+        elmCarrousel__figure.children[selectedImage].classList.add('carrousel__img--activer')
     }
     
     function ajouter_img(elmImg){
