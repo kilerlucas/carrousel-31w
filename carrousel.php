@@ -27,6 +27,7 @@ plugin_dir_url(__FILE__) ."js/carrousel.js",
 array(),
 $version_js,
 true);
+
 }
 
 add_action('wp_enqueue_scripts', 'carrousel_enqueue');
