@@ -1,5 +1,5 @@
 (function(){
-
+/////// helooooo
     var selectedImage = 0;
 
     // fonction IFEE
